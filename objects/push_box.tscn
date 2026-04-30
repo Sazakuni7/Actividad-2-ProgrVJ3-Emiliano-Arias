@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dhmeg0pi8ht43"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_box"]
+friction = 0.8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_box"]
+size = Vector2(28, 28)
+
+[node name="PushBox" type="RigidBody2D" unique_id=1992375918]
+collision_layer = 2
+collision_mask = 3
+mass = 1.6
+physics_material_override = SubResource("PhysicsMaterial_box")
+gravity_scale = 0.0
+linear_damp = 6.0
+angular_damp = 8.0
+
+[node name="Sprite" type="Polygon2D" parent="." unique_id=502079494]
+color = Color(0.58, 0.37, 0.16, 1)
+polygon = PackedVector2Array(-14, -14, 14, -14, 14, 14, -14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=846505452]
+shape = SubResource("RectangleShape2D_box")
