@@ -1,32 +1,33 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene format=3 uid="uid://ppll34fkshaa"]
 
-[ext_resource type="Script" path="res://enemy/enemy.gd" id="1"]
+[ext_resource type="Script" uid="uid://cwmteygbufbmc" path="res://enemy/enemy.gd" id="1"]
 [ext_resource type="PackedScene" path="res://enemy/enemy_corpse.tscn" id="2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
-radius = 14.0
+radius = 17.029387
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
 radius = 18.0
 
-[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+[node name="enemy" type="CharacterBody2D" unique_id=413584803 groups=["enemy"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1")
 Corpse = ExtResource("2")
 
-[node name="Sprite" type="Polygon2D" parent="."]
+[node name="Sprite" type="Polygon2D" parent="." unique_id=1570197867]
+scale = Vector2(1.295, 1.295)
 color = Color(0.85, 0.12, 0.12, 1)
-polygon = PackedVector2Array(0, -18, 17, 8, 0, 18, -17, 8)
+polygon = PackedVector2Array(-9.644409, -2.8331347, 0.2336731, -13.578111, 10.424469, -2.9343815, 6.861931, 9.718749, -6.4575806, 9.681936)
+uv = PackedVector2Array(-9.325256, -3.3819256, 0.2336731, -13.578111, 10.748489, -3.7005577, 5.6503906, 9.363302, -6.4575806, 9.681936)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=813915812]
 shape = SubResource("CircleShape2D_enemy")
 
-[node name="HitArea" type="Area2D" parent="."]
+[node name="HitArea" type="Area2D" parent="." unique_id=821870967]
 collision_layer = 0
-collision_mask = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=1176455246]
 shape = SubResource("CircleShape2D_hit")
 
 [connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]

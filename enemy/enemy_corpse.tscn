@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://tq2mb7xyf63g"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_corpse"]
 friction = 0.7
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_corpse"]
-radius = 14.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_lkxgg"]
+radius = 17.029387
 
-[node name="EnemyCorpse" type="RigidBody2D"]
+[node name="EnemyCorpse" type="RigidBody2D" unique_id=740664759]
 collision_layer = 2
 collision_mask = 3
 mass = 1.3
@@ -15,9 +15,11 @@ gravity_scale = 0.0
 linear_damp = 5.0
 angular_damp = 7.0
 
-[node name="Sprite" type="Polygon2D" parent="."]
-color = Color(0.45, 0.45, 0.45, 1)
-polygon = PackedVector2Array(0, -18, 17, 8, 0, 18, -17, 8)
+[node name="Sprite2" type="Polygon2D" parent="." unique_id=522488556]
+scale = Vector2(1.295, 1.295)
+color = Color(0.481171, 0.45906973, 0.45263654, 1)
+polygon = PackedVector2Array(-9.644409, -2.8331347, 0.2336731, -13.578111, 10.424469, -2.9343815, 6.861931, 9.718749, -6.4575806, 9.681936)
+uv = PackedVector2Array(-9.325256, -3.3819256, 0.2336731, -13.578111, 10.748489, -3.7005577, 5.6503906, 9.363302, -6.4575806, 9.681936)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_corpse")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1517436012]
+shape = SubResource("CircleShape2D_lkxgg")
